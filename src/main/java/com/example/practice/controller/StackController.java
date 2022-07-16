@@ -2,6 +2,7 @@ package com.example.practice.controller;
 
 import com.example.practice.stack.NearestGreaterToLeft;
 import com.example.practice.stack.NearestGreaterToRight;
+import com.example.practice.stack.NearestSmallerToRight;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,6 +15,7 @@ public class StackController {
 
     private final NearestGreaterToRight nearestGreaterToRight;
     private final NearestGreaterToLeft nearestGreaterToLeft;
+    private final NearestSmallerToRight nearestSmallerToRight;
 
     @GetMapping("/nearestGreaterToRight")
     public String nearestGreaterToRightProblems() {
@@ -35,6 +37,17 @@ public class StackController {
         nearestGreaterToLeft.stackBasedSolution(arr, arr.length);
 
         return "nearestGreaterToLeftProblems function executed successfully";
+    }
+
+    @GetMapping("/nearestSmallerToRight")
+    public String nearestSmallerToRightProblems() {
+        //int arr [] = { 11, 13, 21, 3 };
+        int arr[] = { 6, 8, 0, 1, 3 };
+
+        nearestSmallerToRight.bruteForceSolution(arr, arr.length);
+        nearestSmallerToRight.stackBasedSolution(arr, arr.length);
+
+        return "nearestSmallerToRightProblems function executed successfully";
     }
 
 }
