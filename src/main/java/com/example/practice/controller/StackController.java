@@ -4,6 +4,7 @@ import com.example.practice.stack.NearestGreaterToLeft;
 import com.example.practice.stack.NearestGreaterToRight;
 import com.example.practice.stack.NearestSmallerToLeft;
 import com.example.practice.stack.NearestSmallerToRight;
+import com.example.practice.util.TrackExecutionTime;
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ public class StackController {
     private final NearestSmallerToLeft nearestSmallerToLeft;
 
     @GetMapping("/nearestGreaterToRight")
+    @TrackExecutionTime
     public String nearestGreaterToRightProblems() {
         //int arr [] = { 11, 13, 21, 3 };
         int arr[] = { 6, 8, 0, 1, 3 };
